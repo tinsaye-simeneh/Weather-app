@@ -1,1 +1,1 @@
-- This is a project created to a simple desktop responsive Navbar for web app called MsQuare
+- A simple weather for testing my data fetching knowledge using axios
