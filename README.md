@@ -1,1 +1,1 @@
-- A simple weather for testing my data fetching knowledge using axios
+- A simple weather app for testing my data fetching knowledge using axios
