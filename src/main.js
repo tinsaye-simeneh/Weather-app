@@ -1,13 +1,22 @@
-import axios from 'axios';
+import axios from "axios";
+import React from "react";
 
-export default function Quotes() {
-  fetch('https://open-weather13.p.rapidapi.com/city/landon')
-  .then(response => response.data)
-  .then(data => console.log(data))
+const baseURL = "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=c60704567ca7e06c9044295363aae45f";
 
-	return (
-		<div>
-			<span></span>
-		</div>
-	);
+export default function App() {
+  const [post, setPost] = React.useState(null);
+
+  React.useEffect(() => {
+    axios.get(baseURL).then((response) => {
+      setPost(response.data);
+    });
+  }, []);
+
+  if (!post) return null;
+
+  return (
+    <div>
+      <h1>{post.coord.lon}</h1>
+    </div>
+  );
 }
