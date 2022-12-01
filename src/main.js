@@ -16,7 +16,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>{post.name}</h1>
+      <p>{post.name}</p>
     </div>
   );
 }
