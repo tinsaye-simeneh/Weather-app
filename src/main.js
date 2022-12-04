@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
-import './style.css';
+import "./style.css";
 
 const cityName = ["London", "New York", "Tokyo", "Paris", "Berlin", "Moscow"];
 
@@ -41,19 +41,18 @@ export default function Main() {
     <>
       <div className="container">
         <div className="row mt-5 bg-white">
-            {data?.map((item) => (
-              <div className="col-4 mx-auto m-2 pt-3">
-              <div className="bg-warning p-3 border rounded border-warning">
-                {item.data.name}
-                <p>Current Temprature: {item.data.main.temp}</p>
-                <span>Feels Like: {item.data.main.feels_like}</span>
+          {data?.map((item) => (
+            <div className="col-4 mx-auto m-2 pt-3">
+              <div className="bg-primary p-3 border rounded border-secondary">
+                <h3 className="text-white">{item.data.name}</h3>
+                <span className="text-white">Current Temprature: {item.data.main.temp}</span>
                 <span>Humidity: {item.data.main.humidity}</span>
                 <span>Pressure: {item.data.main.pressure}</span>
                 <span>Wind Speed: {item.data.wind.speed}</span>
                 <span>Wind Direction: {item.data.wind.deg}</span>
-</div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </>
