@@ -1,31 +1,28 @@
 import axios from "axios";
 import React, { useEffect } from "react";
+import './style.css';
 
-const cityName = [
-  "London",
-  "New York",
-  "Tokyo",
-  "Paris",
-  "Berlin",
-  "Moscow",
-];
+const cityName = ["London", "New York", "Tokyo", "Paris", "Berlin", "Moscow"];
 
-const apiCall = async ()=>{
+const apiCall = async () => {
   let data = [];
   let cities = [];
   let promises = [];
 
   for (let i = 0; i < cityName.length; i++) {
     promises.push(
-      axios.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=32e0ef17bef62761317bf1cbfa079e5b`).then(response => {
-        cities.push(response);
-      })
-    )
+      axios
+        .get(
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=32e0ef17bef62761317bf1cbfa079e5b`
+        )
+        .then((response) => {
+          cities.push(response);
+        })
+    );
   }
-  await Promise.all(promises).then(data = cities);
+  await Promise.all(promises).then((data = cities));
   return data;
-  
-}
+};
 export default function Main() {
   const city = cityName[0];
   const [data, setData] = React.useState([]);
@@ -33,21 +30,30 @@ export default function Main() {
   const [error, setError] = React.useState(null);
 
   useEffect(() => {
-      async function apiCalled(){
-        const tempData = await apiCall();
-        setData(tempData);
-      }
-      setInterval(()=>apiCalled(),5000)
-    },[city]
-  )
+    async function apiCalled() {
+      const tempData = await apiCall();
+      setData(tempData);
+    }
+    setInterval(() => apiCalled(), 5000);
+  }, [city]);
 
   return (
     <>
       <div className="container">
-        <div className="row mt-5">
-          <div className="col-4 bg-primary border rounded">
-           {data?.map(item => <div>{item.data.name}<h2>{item.data.main.temp}</h2></div>)}
-          </div>
+        <div className="row mt-5 bg-white">
+            {data?.map((item) => (
+              <div className="col-4 mx-auto m-2 pt-3">
+              <div className="bg-warning p-3 border rounded border-warning">
+                {item.data.name}
+                <p>Current Temprature: {item.data.main.temp}</p>
+                <span>Feels Like: {item.data.main.feels_like}</span>
+                <span>Humidity: {item.data.main.humidity}</span>
+                <span>Pressure: {item.data.main.pressure}</span>
+                <span>Wind Speed: {item.data.wind.speed}</span>
+                <span>Wind Direction: {item.data.wind.deg}</span>
+</div>
+              </div>
+            ))}
         </div>
       </div>
     </>
