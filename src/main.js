@@ -117,18 +117,12 @@ export default function Main() {
   if (!res) return null;
 
   return (
-    <div className="container mt-5 border p-4 rounded">
-      <div className="row">
-        <div className="col-4 bg-warning">
-          <h6>{res.name}</h6>
-          <span className="d-block"> {res.weather[0].description}</span>
-          <span className="d-block">
-            {" "}
-            Minimum Temprature: {res.main.temp_min}
-          </span>
-          <span> Maximum Temprature: {res.main.temp_max}</span>
+    <>
+      <div className="container">
+        <div className="row">
+          {city}
         </div>
       </div>
-    </div>
+    </>
   );
 }
