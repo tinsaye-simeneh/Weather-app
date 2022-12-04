@@ -45,7 +45,9 @@ export default function Main() {
             <div className="col-4 mx-auto m-2 pt-3">
               <div className="bg-primary p-3 border rounded border-secondary">
                 <h3 className="text-white">{item.data.name}</h3>
-                <span className="text-white">Current Temprature: {item.data.main.temp}</span>
+                <span className="text-white">
+                  Current Temprature: {item.data.main.temp}
+                </span>
                 <span>Humidity: {item.data.main.humidity}</span>
                 <span>Pressure: {item.data.main.pressure}</span>
                 <span>Wind Speed: {item.data.wind.speed}</span>
