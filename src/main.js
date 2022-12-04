@@ -63,64 +63,24 @@ const cityName = [
   "Bhiwandi",
 ];
 
-const baseURL =
-  "https://api.openweathermap.org/data/2.5/weather?q=" +
-  cityName[2] +
-  "&appid=c60704567ca7e06c9044295363aae45f";
-
 export default function Main() {
-  const [res, setRes] = React.useState(null);
-  const [city, setCity] = React.useState("Mumbai");
-  const [temp, setTemp] = React.useState("");
-  const [minTemp, setMinTemp] = React.useState("");
-  const [maxTemp, setMaxTemp] = React.useState("");
-  const [humidity, setHumidity] = React.useState("");
-  const [pressure, setPressure] = React.useState("");
-  const [windSpeed, setWindSpeed] = React.useState("");
-  const [windDeg, setWindDeg] = React.useState("");
-  const [weather, setWeather] = React.useState("");
-  const [weatherIcon, setWeatherIcon] = React.useState("");
-  const [weatherDescription, setWeatherDescription] = React.useState("");
-  const [weatherMain, setWeatherMain] = React.useState("");
-  const [weatherId, setWeatherId] = React.useState("");
-  const [sunrise, setSunrise] = React.useState("");
-  const [sunset, setSunset] = React.useState("");
-  const [country, setCountry] = React.useState("");
-  const [cityName, setCityName] = React.useState("");
-  const [date, setDate] = React.useState("");
-  const [time, setTime] = React.useState("");
-
-  React.useEffect(() => {
-    axios.get(baseURL).then((response) => {
-      setRes(response.data);
-      setTemp(res.data.main.temp);
-      setMinTemp(res.data.main.temp_min);
-      setMaxTemp(res.data.main.temp_max);
-      setHumidity(res.data.main.humidity);
-      setPressure(res.data.main.pressure);
-      setWindSpeed(res.data.wind.speed);
-      setWindDeg(res.data.wind.deg);
-      setWeather(res.data.weather);
-      setWeatherIcon(res.data.weather[0].icon);
-      setWeatherDescription(res.data.weather[0].description);
-      setWeatherMain(res.data.weather[0].main);
-      setWeatherId(res.data.weather[0].id);
-      setSunrise(res.data.sys.sunrise);
-      setSunset(res.data.sys.sunset);
-      setCountry(res.data.sys.country);
-      setCityName(res.data.name);
-      setDate(new Date().toLocaleDateString());
-      setTime(new Date().toLocaleTimeString());
-    });
-  }, []);
-
-  if (!res) return null;
+        const city = cityName[0];
+    axios
+      .get(
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=32e0ef17bef62761317bf1cbfa079e5b`
+      )
+      .then((res) => {
+        console.log(res.data);
+      });
+     
 
   return (
     <>
       <div className="container">
-        <div className="row">
-          {city}
+        <div className="row mt-5">
+          <div className="col-4 bg-primary border rounded">
+         {}
+          </div>
         </div>
       </div>
     </>
