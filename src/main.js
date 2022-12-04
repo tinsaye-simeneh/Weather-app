@@ -46,7 +46,7 @@ export default function Main() {
               <div className="bg-primary p-3 border rounded border-secondary">
                 <h3 className="text-white">{item.data.name}</h3>
                 <span className="text-white">
-                  Current Temprature: {item.data.main.temp}
+                  Current Temprature: {item.data.main.temp - 273.15}°C
                 </span>
                 <span>Humidity: {item.data.main.humidity}</span>
                 <span>Pressure: {item.data.main.pressure}</span>
