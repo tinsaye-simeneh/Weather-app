@@ -13,7 +13,7 @@ const apiCall = async () => {
     promises.push(
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=32e0ef17bef62761317bf1cbfa079e5b`
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=4a671f94fff5d1f7378d46c3fff8e095`
         )
         .then((response) => {
           cities.push(response);
@@ -52,6 +52,9 @@ export default function Main() {
                 <span>Pressure: {item.data.main.pressure}</span>
                 <span>Wind Speed: {item.data.wind.speed}</span>
                 <span>Wind Direction: {item.data.wind.deg}</span>
+                <span>Wind Direction: {item.data.time}</span>
+                <span>Wind Direction: {item.data.date}</span>
+                <span>Wind Direction: {item.data.Country}</span>
               </div>
             </div>
           ))}
