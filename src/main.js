@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import "./style.css";
 
-const cityName = ["London", "New York", "Tokyo", "Paris", "Berlin", "Moscow"];
+const cityName = ["London", "New York", "Tokyo", "Paris", "Berlin", "Moscow", "Addis Ababa"];
 
 const apiCall = async () => {
   let data = [];
@@ -34,7 +34,7 @@ export default function Main() {
       const tempData = await apiCall();
       setData(tempData);
     }
-/*    setInterval(() => apiCalled(), 5000); */
+ setInterval(() => apiCalled(), 5000);
   }, [city]);
 
   return (
@@ -55,7 +55,8 @@ export default function Main() {
                 <span>Pressure: {item.data.main.pressure}</span>
                 <span>Wind Speed: {item.data.wind.speed}</span>
                 <span>Wind Direction: {item.data.wind.deg}</span>
-                <span>Time: {item.data.time}</span>
+                <span>Time: {item.data.timeZone}</span>
+                
               </div>
             </div>
           ))}
