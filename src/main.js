@@ -39,7 +39,7 @@ export default function Main() {
 
   return (
     <>
-      <div className="container">
+      <div className="container bg-dark">
         <div className="row mt-5 bg-white">
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
