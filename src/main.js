@@ -44,7 +44,7 @@ export default function Main() {
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
               <div className="bg-primary p-3 border rounded border-secondary">
-                <h3 className="text-white">{item.data.name}</h3>
+                <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
                 <span className="text-white">
                   Current Temprature: { Number((item.data.main.temp - 273.15).toFixed(2))}°C
                 </span>
@@ -52,9 +52,7 @@ export default function Main() {
                 <span>Pressure: {item.data.main.pressure}</span>
                 <span>Wind Speed: {item.data.wind.speed}</span>
                 <span>Wind Direction: {item.data.wind.deg}</span>
-                <span>Wind Direction: {item.data.time}</span>
-                <span>Wind Direction: {item.data.date}</span>
-                <span>Wind Direction: {item.data.Country}</span>
+                <span>Time: {item.data.time}</span>
               </div>
             </div>
           ))}
