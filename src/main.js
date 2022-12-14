@@ -43,7 +43,7 @@ export default function Main() {
         <div className="row mt-5 bg-white">
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
-              <div className="bg-primary p-3 border rounded border-secondary">
+              <div className="bg-primary p-3 border-none rounded border-secondary">
                 <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
                 <span className="text-white">
                   Current Temprature: { Number((item.data.main.temp - 273.15).toFixed(2))}°C
