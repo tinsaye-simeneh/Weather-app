@@ -43,20 +43,20 @@ export default function Main() {
         <div className="row mt-5 bg-white">
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
-              <div className="bg-primary p-3 border-none rounded border-secondary">
-                <div className="text-center">
-                 h
-                </div>
+              <div className="bg-dark p-3 border rounded border-secondary">
+                <div className="text-center bg-primary">
                 <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
+                </div>
+                <div className="text-center">
                 <span className="text-white">
                   Current Temprature: { Number((item.data.main.temp - 273.15).toFixed(2))}°C
                 </span>
-                <span>Humidity: {item.data.main.humidity}</span>
-                <span>Pressure: {item.data.main.pressure}</span>
-                <span>Wind Speed: {item.data.wind.speed}</span>
-                <span>Wind Direction: {item.data.wind.deg}</span>
-                <span>Time: {item.data.timeZone}</span>
-                
+                <span  className="text-white">Humidity: {item.data.main.humidity}</span>
+                <span  className="text-white">Pressure: {item.data.main.pressure}</span>
+                <span  className="text-white">Wind Speed: {item.data.wind.speed}</span>
+                <span  className="text-white">Wind Direction: {item.data.wind.deg}</span>
+                <span  className="text-white">Time: {item.data.timeZone}</span>
+</ div>
               </div>
             </div>
           ))}
