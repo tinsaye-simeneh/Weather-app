@@ -34,7 +34,7 @@ export default function Main() {
       const tempData = await apiCall();
       setData(tempData);
     }
-    setInterval(() => apiCalled());
+/*    setInterval(() => apiCalled(), 5000); */
   }, [city]);
 
   return (
