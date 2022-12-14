@@ -44,6 +44,12 @@ export default function Main() {
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
               <div className="bg-primary p-3 border-none rounded border-secondary">
+                <div className="text-center">
+                  <img
+                    src={`http://openweathermap.org/img/w/${item.data.weather[0].icon}.png`}
+                    alt="weather icon"
+                  />
+                </div>
                 <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
                 <span className="text-white">
                   Current Temprature: { Number((item.data.main.temp - 273.15).toFixed(2))}°C
