@@ -39,8 +39,8 @@ export default function Main() {
 
   return (
     <>
-      <div className="container bg-dark">
-        <div className="row mt-5 bg-white">
+      <div className="container-fluid bg-dark">
+        <div className="row mt-5">
           {data?.map((item) => (
             <div className="col-4 mx-auto m-2 pt-3">
               <div className="bg-dark p-3 border rounded border-secondary">
