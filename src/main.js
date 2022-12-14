@@ -34,7 +34,6 @@ export default function Main() {
       const tempData = await apiCall();
       setData(tempData);
     }
-    setInterval(() => apiCalled());
   }, [city]);
 
   return (
@@ -45,10 +44,7 @@ export default function Main() {
             <div className="col-4 mx-auto m-2 pt-3">
               <div className="bg-primary p-3 border-none rounded border-secondary">
                 <div className="text-center">
-                  <img
-                    src={`http://openweathermap.org/img/w/${item.data.weather[0].icon}.png`}
-                    alt="weather icon"
-                  />
+                 h
                 </div>
                 <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
                 <span className="text-white">
