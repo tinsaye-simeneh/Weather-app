@@ -7,20 +7,17 @@ import userEvent from "@testing-library/user-event";
 
 const Navbar = () => {
 
+  const [buttonText, setButtonText] = useState(localStorage.getItem("ButtonText"));
+
   const Logouthandler = (e) => {
     e.preventDefault();
-    if(localStorage.getItem("LoginStatus") === "true")
-    {
-      localStorage.setItem("LoginStatus", false);
+    if (buttonText === "") {
       window.location.href = "http://localhost:3000/Login";
     }
-  };
-
-  const Loginhandler = () => {
-    if(localStorage.getItem("LoginStatus") === "false")
-    {
-      localStorage.setItem("LoginStatus", true);
-      window.location.href = "http://localhost:3000/Home";
+    else if (buttonText === "Logout") {
+      localStorage.setItem("LoginStatus", false);
+      localStorage.setItem("ButtonText", "");
+      window.location.href = "http://localhost:3000/Login";
     }
   };
 
@@ -55,7 +52,7 @@ const Navbar = () => {
               </a>
             </div>
             <div  className="col-md-3 col-3 mt-3">
-            <button className="text-white" id="loginbtn" type="submit" onClick={Logouthandler}>Logout</button>
+            <button className="bg-dark border-0 text-white" id="loginbtn" type="submit" onClick={Logouthandler}>{buttonText}</button>
             </div>
           </div>
         </div>

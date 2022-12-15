@@ -18,6 +18,7 @@ const Login = () => {
             alert("You are logged in");
             window.location.href = "http://localhost:3000/Home";
             localStorage.setItem("LoginStatus", true);
+            localStorage.setItem("ButtonText", "Logout");
         }
     };
 
