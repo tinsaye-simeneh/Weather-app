@@ -1,6 +1,10 @@
 import React from "react";
+import { useState } from "react";
 
 const Login = () => {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+
     return (
         <div className="container-fluid pb-4 pt-5">
         <div className="row py-5">
@@ -19,6 +23,7 @@ const Login = () => {
                         id="exampleInputEmail1"
                         aria-describedby="emailHelp"
                         placeholder="Enter email"
+                        onChange={(e) => {setEmail(e.target.value)}}
                         />
                         <small id="emailHelp" className="form-text text-muted">
                         We'll never share your email with anyone else.
@@ -31,6 +36,7 @@ const Login = () => {
                         className="form-control"
                         id="exampleInputPassword1"
                         placeholder="Password"
+                        onChange={(e) => {setPassword(e.target.value)}}
                         />
                     </div>
                     <div className="form-group form-check mt-2">
