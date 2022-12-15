@@ -2,3 +2,27 @@ span{
     color: white;
     display: block;
 }
+.navbar-title{
+    padding-left: 8rem;
+    padding-top: 1rem;
+}
+.right-icons{
+    padding-left: 8rem;
+}
+.navbar-title{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+@media screen and (max-width: 768px){
+    .navbar-title{
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .right-icons{
+        padding-left: 5rem;
+    }
+}
