@@ -5,7 +5,7 @@ import linkedin from "./assets/img/linkedin.svg";
 
 const Navbar = () => {
   return (
-    <div className="Container-fluid bg-dark">
+    <div className="Container-fluid bg-dark shadow ">
       <div className="row">
         <div className="col-md-8 col-12 text-white navbar-title">Windy Weather App</div>
         <div className="col-md-3 col-12">
