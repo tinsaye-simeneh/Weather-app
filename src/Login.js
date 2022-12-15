@@ -5,6 +5,19 @@ const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        if(email === "" || password === "")
+        {
+            alert("Please fill all the fields");
+            return;
+        }
+        
+        console
+        .log("Email: ", email, "Password: ", password);
+    };
+
+
     return (
         <div className="container-fluid pb-4 pt-5">
         <div className="row py-5">
