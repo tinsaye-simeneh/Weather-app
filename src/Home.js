@@ -120,7 +120,7 @@ const apiCall = async () => {
     promises.push(
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=927542b8341b5404e1c43fe749577ffa`
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=b1762fcede3c3e611ab8c6553e7da2f3`
         )
         .then((response) => {
           cities.push(response);
