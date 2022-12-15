@@ -129,7 +129,7 @@ const apiCall = async () => {
   await Promise.all(promises).then((data = cities));
   return data;
 };
-export default function Main() {
+export default function Home() {
   const city = cityName[0];
   const [data, setData] = React.useState([]);
   const [loading, setLoading] = React.useState(false);
