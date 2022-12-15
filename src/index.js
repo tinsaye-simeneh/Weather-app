@@ -5,12 +5,13 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import 'bootstrap/dist/js/bootstrap.min.js';
 import Main from "./main";
 import Navbar from './Navbar';
+import Login from './Login';
 
 function App() {
     return(
-        <div className="container-fluid bg-dark">
+        <div className="container-fluid bg-dark pb-2">
         <Navbar />
-        <Main/>
+        <Login/>
     </div>
     );
 }
