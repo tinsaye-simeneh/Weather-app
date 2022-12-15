@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import "./style.css";
+import logo from "./assets/img/loading.gif";
 
 const cityName = [
   "London",
@@ -124,6 +125,9 @@ const apiCall = async () => {
         .then((response) => {
           cities.push(response);
         })
+        .catch((error) => {
+          console.log(error);
+        })
     );
   }
   await Promise.all(promises).then((data = cities));
@@ -132,21 +136,29 @@ const apiCall = async () => {
 export default function Home() {
   const city = cityName[0];
   const [data, setData] = React.useState([]);
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(null);
 
   useEffect(() => {
     async function apiCalled() {
       const tempData = await apiCall();
       setData(tempData);
+      setLoading(false);
     }
     setInterval(() => apiCalled(), 5000);
   }, [city]);
 
   return (
     <>
-      <div className="container-fluid bg-dark">
+      {loading && (
+        <div className="loader mx-auto">
+          <img src={logo} alt="loader" />
+        </div>
+      )}
+      {data &&
+       <div className="container-fluid bg-dark">
         <div className="row mt-5">
+      
           {data?.map((item) => (
             <div className="col-md-3 col-12 mx-auto m-2 pt-3">
               <div className="bg-dark p-3 border rounded border-secondary">
@@ -178,6 +190,7 @@ export default function Home() {
           ))}
         </div>
       </div>
+}
     </>
   );
 }
