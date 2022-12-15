@@ -2,7 +2,15 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import "./style.css";
 
-const cityName = ["London", "New York", "Tokyo", "Paris", "Berlin", "Moscow", "Addis Ababa"];
+const cityName = [
+  "London",
+  "New York",
+  "Tokyo",
+  "Paris",
+  "Berlin",
+  "Moscow",
+  "Addis Ababa",
+];
 
 const apiCall = async () => {
   let data = [];
@@ -34,7 +42,7 @@ export default function Main() {
       const tempData = await apiCall();
       setData(tempData);
     }
- setInterval(() => apiCalled(), 5000);
+    setInterval(() => apiCalled(), 5000);
   }, [city]);
 
   return (
@@ -42,21 +50,31 @@ export default function Main() {
       <div className="container-fluid bg-dark">
         <div className="row mt-5">
           {data?.map((item) => (
-            <div className="col-4 mx-auto m-2 pt-3">
+            <div className="col-md-4 col-12 mx-auto m-2 pt-3">
               <div className="bg-dark p-3 border rounded border-secondary">
                 <div className="text-center bg-primary">
-                <h3 className="text-white">{item.data.name}, {item.data.sys.country} </h3>
+                  <h3 className="text-white">
+                    {item.data.name}, {item.data.sys.country}{" "}
+                  </h3>
                 </div>
                 <div className="text-center">
-                <span className="text-white">
-                  Current Temprature: { Number((item.data.main.temp - 273.15).toFixed(2))}°C
-                </span>
-                <span  className="text-white">Humidity: {item.data.main.humidity}</span>
-                <span  className="text-white">Pressure: {item.data.main.pressure}</span>
-                <span  className="text-white">Wind Speed: {item.data.wind.speed}</span>
-                <span  className="text-white">Wind Direction: {item.data.wind.deg}</span>
-                <span  className="text-white">Time: {item.data.timeZone}</span>
-</ div>
+                  <span className="text-white">
+                    Current Temprature:{" "}
+                    {Number((item.data.main.temp - 273.15).toFixed(2))}°C
+                  </span>
+                  <span className="text-white">
+                    Humidity: {item.data.main.humidity}
+                  </span>
+                  <span className="text-white">
+                    Pressure: {item.data.main.pressure}
+                  </span>
+                  <span className="text-white">
+                    Wind Speed: {item.data.wind.speed}
+                  </span>
+                  <span className="text-white">
+                    Wind Direction: {item.data.wind.deg}
+                  </span>
+                </div>
               </div>
             </div>
           ))}
