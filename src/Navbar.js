@@ -5,20 +5,17 @@ import behance from "./assets/img/behance.svg";
 import linkedin from "./assets/img/linkedin.svg";
 import userEvent from "@testing-library/user-event";
 
-const Navbar = ({LoginStat}) => {
-
-  let LoginStatus = LoginStat;
+const Navbar = () => {
 
   const Loginhandler = (e) => {
-    LoginStatus = false;
-    console.log(LoginStatus);
-
-    if(LoginStatus === false){
-      document.getElementById("loginbtn").style.display = "block";
-      window.location.href = "http://localhost:3000/Home";
+    e.preventDefault();
+    if(localStorage.getItem("LoginStatus") === "true")
+    {
+      localStorage.setItem("LoginStatus", false);
+      window.location.href = "http://localhost:3000/Login";
     }
-    else{
-      document.getElementById("loginbtn").style.display = "none";
+    else
+    {
       window.location.href = "http://localhost:3000/Login";
     }
   };

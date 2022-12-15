@@ -10,8 +10,12 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 
 function App() {
+
+    if (localStorage.getItem("LoginStatus") === null) {
+        localStorage.setItem("LoginStatus", false);
+    }
+
     return(
-        
         <div className="container-fluid bg-dark pb-2">
         <BrowserRouter>
         <Navbar />

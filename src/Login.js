@@ -17,11 +17,8 @@ const Login = () => {
         {
             alert("You are logged in");
             window.location.href = "http://localhost:3000/Home";
-            <Navbar LoginStatus={true} />
+            localStorage.setItem("LoginStatus", true);
         }
-
-        console
-        .log("Email: ", email, "Password: ", password);
     };
 
 
