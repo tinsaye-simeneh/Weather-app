@@ -7,19 +7,23 @@ import userEvent from "@testing-library/user-event";
 
 const Navbar = () => {
 
-  const Loginhandler = (e) => {
+  const Logouthandler = (e) => {
     e.preventDefault();
     if(localStorage.getItem("LoginStatus") === "true")
     {
       localStorage.setItem("LoginStatus", false);
       window.location.href = "http://localhost:3000/Login";
     }
-    else
+  };
+
+  const Loginhandler = () => {
+    if(localStorage.getItem("LoginStatus") === "false")
     {
-      window.location.href = "http://localhost:3000/Login";
+      localStorage.setItem("LoginStatus", true);
+      window.location.href = "http://localhost:3000/Home";
     }
   };
-  
+
   return (
     <div className="Container-fluid bg-dark shadow-lg">
       <div className="row">
@@ -51,7 +55,7 @@ const Navbar = () => {
               </a>
             </div>
             <div  className="col-md-3 col-3 mt-3">
-            <button className="text-white" id="loginbtn" type="submit" onClick={Loginhandler}>Logout</button>
+            <button className="text-white" id="loginbtn" type="submit" onClick={Logouthandler}>Logout</button>
             </div>
           </div>
         </div>
