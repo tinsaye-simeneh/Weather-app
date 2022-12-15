@@ -120,7 +120,7 @@ const apiCall = async () => {
     promises.push(
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=da696e8a0c7fcf7b45e39e3efa1862a0`
+          `https://api.openweathermap.org/data/2.5/weather?q=${cityName[i]}&appid=927542b8341b5404e1c43fe749577ffa`
         )
         .then((response) => {
           cities.push(response);
@@ -150,13 +150,14 @@ export default function Home() {
 
   return (
     <>
+    
+    <div className="container-fluid bg-dark">
       {loading && (
-        <div className="loader mx-auto">
+        <div className="loader mx-auto text-center mt-5 py-5">
           <img src={logo} alt="loader" />
         </div>
       )}
       {data &&
-       <div className="container-fluid bg-dark">
         <div className="row mt-5">
       
           {data?.map((item) => (
@@ -189,8 +190,8 @@ export default function Home() {
             </div>
           ))}
         </div>
-      </div>
 }
+</div>
     </>
   );
 }
