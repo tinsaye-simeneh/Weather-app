@@ -12,7 +12,12 @@ const Login = () => {
             alert("Please fill all the fields");
             return;
         }
-        
+        else if(email === "weathertest@gmail.com" || password === "weather123")
+        {
+            alert("You are logged in");
+            window.location.href = "http://localhost:3000/Home";
+        }
+
         console
         .log("Email: ", email, "Password: ", password);
     };
