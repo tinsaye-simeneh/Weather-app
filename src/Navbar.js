@@ -1,9 +1,28 @@
 import React from "react";
+import {useState} from "react";
 import github from "./assets/img/github.svg";
 import behance from "./assets/img/behance.svg";
 import linkedin from "./assets/img/linkedin.svg";
+import userEvent from "@testing-library/user-event";
 
-const Navbar = () => {
+const Navbar = ({LoginStat}) => {
+
+  let LoginStatus = LoginStat;
+
+  const Loginhandler = (e) => {
+    LoginStatus = false;
+    console.log(LoginStatus);
+
+    if(LoginStatus === false){
+      document.getElementById("loginbtn").style.display = "block";
+      window.location.href = "http://localhost:3000/Home";
+    }
+    else{
+      document.getElementById("loginbtn").style.display = "none";
+      window.location.href = "http://localhost:3000/Login";
+    }
+  };
+  
   return (
     <div className="Container-fluid bg-dark shadow-lg">
       <div className="row">
@@ -33,6 +52,9 @@ const Navbar = () => {
                 className="img-fluid my-3"
               />
               </a>
+            </div>
+            <div  className="col-md-3 col-3 mt-3">
+            <button className="text-white" id="loginbtn" type="submit" onClick={Loginhandler}>Logout</button>
             </div>
           </div>
         </div>

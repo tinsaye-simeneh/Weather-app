@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react";
+import Navbar from "./Navbar";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -16,6 +17,7 @@ const Login = () => {
         {
             alert("You are logged in");
             window.location.href = "http://localhost:3000/Home";
+            <Navbar LoginStatus={true} />
         }
 
         console
