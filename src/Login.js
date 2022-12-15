@@ -33,6 +33,7 @@ const Login = () => {
                     <h5 className="text-center text-dark py-3">Welcome Back</h5>
             <h3 className="text-center text-dark pb-3">Login</h3>
                     <div className="col-md-12 col-12">
+                    <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input
@@ -57,20 +58,11 @@ const Login = () => {
                         onChange={(e) => {setPassword(e.target.value)}}
                         />
                     </div>
-                    <div className="form-group form-check mt-2">
-                        <input
-                        type="checkbox"
-                        className="form-check-input"
-                        id="exampleCheck1"
-                        />
-                        <label className="form-check-label" for="exampleCheck1">
-                        Check me out
-                        </label>
-                    </div>
-                    <button type="submit" className="btn btn-primary mt-3">
+                   
+                    <button type="submit" className="btn form-control btn-primary mt-4 mb-4 mw-100">
                         Submit
                     </button>
-                
+                    </form>
                     </div>
                 </div>
                 </div>
