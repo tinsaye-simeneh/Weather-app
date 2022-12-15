@@ -30,7 +30,7 @@ const Login = () => {
             <div className="card shadow-lg">
                 <div className="card-body">
                 <div className="row mb-4">
-                    Please use Email: weathertest@gmail.com and password: weather123 to login
+                    Email: weathertest@gmail.com & password: weather123
                     <h5 className="text-center text-dark py-3">Welcome Back</h5>
             <h3 className="text-center text-dark pb-3">Login</h3>
                     <div className="col-md-12 col-12">
