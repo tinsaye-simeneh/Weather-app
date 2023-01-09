@@ -1,1 +1,1 @@
-# A simply designed weather Website to test data fetching methods
+# A simple weather web app to test data fetching methods
