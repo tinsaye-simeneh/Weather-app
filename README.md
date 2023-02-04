@@ -1,1 +1,1 @@
-# A simple weather web app to test data fetching methods
+# A simple weather web app to test axios data fetching method 
